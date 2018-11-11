@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
-<!--[if IE 9]>
-<html class="ie9" lang="en"><![endif]--><!--[if IE 8]>
-<html class="ie8" lang="en"><![endif]-->
+<html>
+
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" href="{{ .Site.BaseURL }}favicon.png" type="image/x-icon">
 	<meta name="google-site-verification" content="XsOAmV1gT-Y3458pKxdVRR0mHQ719UiZOf7_p6T4nyU">
 
@@ -56,39 +54,70 @@
 	<!-- Monitoring -->
 	{{ partial "smartlook" }}
 </head>
+
 <body>
+	<nav class="navbar is-fixed-top has-shadow" role="navigation" aria-label="main navigation">
+		<div class="container">
 
-<div class="container">
-	<div id="header">
-		<nav>
-			<ul>
-				<li><a href="/" class="logo"><img title="Milan Felix Sulc" src="{{ .Site.BaseURL }}img/f3l1x2.png"></a>
-				</li>
-				<li><a href="/blog">Blog</a></li>
-				<li><a href="/projects">Projects</a></li>
-				<li><a href="https://github.com/f3l1x">Github</a></li>
-				<li><a href="/talks">Talks</a></li>
-				<li><a href="/about">About</a></li>
-			</ul>
-		</nav>
-		<div class="buttons d-none d-md-block">
-			<a class="button" href="https://twitter.com/xf3l1x"><i class="fa fa-twitter" aria-hidden="true"></i> @xf3l1x</a>
-			<a class="button" type="application/rss+xml" href="/blog/feed.xml"><i class="fa fa-rss-square" aria-hidden="true"></i> RSS</a>
-			<a class="button" href="https://github.com/f3l1x/f3l1x"><i class="fa fa-code-fork" aria-hidden="true"></i>
-				Fork</a>
+			<div class="navbar-brand">
+				<a class="navbar-item" href="/">
+					<img src="{{ .Site.BaseURL }}img/f3l1x2.png" height="28">
+				</a>
+
+				<a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="main-menu">
+					<span aria-hidden="true"></span>
+					<span aria-hidden="true"></span>
+					<span aria-hidden="true"></span>
+				</a>
+			</div>
+
+			<div id="main-menu" class="navbar-menu">
+				<div class="navbar-start">
+					<a class="navbar-item" href="/blog">Blog</a>
+					<a class="navbar-item" href="/projects">Projects</a>
+					<a class="navbar-item" href="https://github.com/f3l1x">Github</a>
+					<a class="navbar-item" href="/talks">Talks</a>
+					<a class="navbar-item" href="/about">About</a>
+				</div>
+
+				<div class="navbar-end">
+					<div class="navbar-item">
+						<div class="buttons">
+							<a class="button is-light" href="https://twitter.com/xf3l1x">
+								<i class="fa fa-twitter" aria-hidden="true"></i> @xf3l1x
+							</a>
+							<a class="button is-light" href="/blog/feed.xml">
+								<i class="fa fa-rss-square" aria-hidden="true"></i>
+								RSS</a>
+							<a class="button is-light" href="https://github.com/f3l1x/f3l1x">
+								<i class="fa fa-code-fork" aria-hidden="true"></i>
+								Fork
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-	</div>
+	</nav>
 
-	<div id="content">
-		{{ block "main" .}}{{ end }}
-	</div>
+	<section class="section">
+		<div class="container">
+			{{ block "main" .}}{{ end }}
+		</div>
+	</section>
 
-	<footer>
-		At the freetime rewritten by <a href="/">Milan Felix Šulc</a>.
-		<br>
-		This page is generated with <a href="https://gohugo.io" title="Hugo">Hugo</a>.
+	<footer class="footer">
+		<div class="content has-text-centered">
+			<p>
+				At the freetime rewritten by <a href="/">Milan Felix Šulc</a>.
+			</p>
+			<p>
+				This page is generated with <a href="https://gohugo.io" title="Hugo">Hugo</a>.
+			</p>
+		</div>
 	</footer>
-</div>
-{{ partial "qa.html" }}
+
+	{{ partial "qa.html" }}
 </body>
+
 </html>
